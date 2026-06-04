@@ -1,0 +1,34 @@
+{
+  "name": "confidence-reset-companion-proxy",
+  "version": "1.0.0",
+  "description": "Independent backend proxy for Confidence Reset Companion",
+  "main": "proxy-backend-claude.js",
+  "scripts": {
+    "start": "node proxy-backend-claude.js",
+    "start:openai": "node proxy-backend-openai.js",
+    "dev": "nodemon proxy-backend-claude.js",
+    "dev:openai": "nodemon proxy-backend-openai.js"
+  },
+  "keywords": [
+    "companion",
+    "ai",
+    "tts",
+    "claude",
+    "openai",
+    "elevenlabs"
+  ],
+  "author": "Jules",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "@anthropic-ai/sdk": "^0.24.0",
+    "openai": "^4.52.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
