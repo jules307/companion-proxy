@@ -101,12 +101,12 @@ app.post('/api/chat', async (req, res) => {
       return res.status(400).json({ error: 'Invalid message' });
     }
 
-    const response = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 1024,
-      system: selectedSystemPrompt,
-      messages: claudeMessages
-    });
+  const response = await anthropic.messages.create({
+  model: 'claude-3-5-haiku-latest',
+  max_tokens: 1024,
+  system: selectedSystemPrompt,
+  messages: claudeMessages
+});
 
     const reply =
       response.content?.[0]?.type === 'text'
@@ -116,7 +116,7 @@ app.post('/api/chat', async (req, res) => {
     res.json({
       reply,
       type,
-      model: 'claude-3-5-sonnet-20241022'
+    model: 'claude-3-5-haiku-latest'
     });
 
   } catch (error) {
