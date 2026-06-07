@@ -102,7 +102,7 @@ app.post('/api/chat', async (req, res) => {
     }
 
   const response = await anthropic.messages.create({
-  model: 'claude-3-5-haiku-latest',
+ model: 'claude-haiku-4-5-20251001',
   max_tokens: 1024,
   system: selectedSystemPrompt,
   messages: claudeMessages
@@ -116,7 +116,7 @@ app.post('/api/chat', async (req, res) => {
     res.json({
       reply,
       type,
-    model: 'claude-3-5-haiku-latest'
+   model: 'claude-haiku-4-5-20251001'
     });
 
   } catch (error) {
